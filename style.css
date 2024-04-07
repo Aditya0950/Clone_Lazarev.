@@ -1,0 +1,835 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Gilroy;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: #111111;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url(Assets/Gilroy-Black.ttf);
+}
+
+@font-face {
+    font-family: Gilroy-Medium;
+    src: url(Assets/Gilroy-Medium.ttf);
+}
+
+/* Sidebar */
+
+::-webkit-scrollbar {
+    width: 0.25vw;
+}
+
+::-webkit-scrollbar-track {
+    background-color: gainsboro;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 50vw;
+    background-color: #0DA34E;
+}
+
+/* Main Conding Starts */
+
+/* This is cursor */
+
+#Cursor {
+    width: 1vw;
+    height: 1vw;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(70%, -70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 999;
+    background-color: white;
+    mix-blend-mode: difference;
+    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#Cursor p {
+    color: black;
+    font-size: 0.75vw;
+    font-family: Gilroy-Medium;
+}
+
+/* This is hover box */
+
+#Container #HoverBox {
+    width: 21.5vw;
+    height: 3.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 2.5%;
+    right: 10.5%;
+    z-index: 9999;
+    padding: 2vw 0.5vw 2vw 1.75vw;
+    border-radius: 5vw;
+    background-color: #111111;
+}
+
+#HoverBox #Right {
+    width: 35.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 1vw 1vw;
+    border-radius: 5vw;
+    background-color: #1f1f1f;
+}
+
+#HoverBox p,
+#HoverBox h2 {
+    text-transform: uppercase;
+}
+
+#HoverBox p {
+    font-size: 0.75vw;
+    font-family: "Gilroy-Medium";
+}
+
+#Right p {
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+#HoverBox h2 {
+    font-size: 0.75vw;
+    font-size: 500;
+    font-family: "Gilroy-Medium";
+}
+
+/* # starts */
+
+#Container nav {
+    width: 100%;
+    height: 7.25vw;
+    position: fixed;
+    z-index: 10;
+    background-color: #111111;
+    transition: all ease 0.65s;
+}
+
+nav #NavContainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+    margin: 0vw 10.5vw;
+    background-color: #111111;
+    transition: all ease 0.65s;
+}
+
+#NavContainer h1 {
+    font-size: 1.5vw;
+    text-transform: uppercase;
+}
+
+#NavContainer #NavCenter {
+    display: flex;
+    gap: 1vw;
+}
+
+#NavCenter h2 {
+    font-size: 0.8vw;
+    font-weight: 600;
+    font-family: Gilroy-Medium;
+    text-transform: uppercase;
+    transition: all ease 0.5s;
+}
+
+#NavCenter h2:hover {
+    color: #414141;
+    font-weight: 600;
+}
+
+/* NavBottom starts */
+
+#NavBottom {
+    width: 79%;
+    height: calc(100% + 1.5vw);
+    position: absolute;
+    bottom: -1.5%;
+    margin: 0vw 10.5vw;
+    transition: all ease 0.65s;
+    background-color: #111111;
+    border-bottom: 0.01vw solid gainsboro;
+}
+
+nav:hover #NavBottom {
+    bottom: -110%;
+}
+
+#NavBottomContainer {
+    height: 100%;
+    display: flex;
+    position: relative;
+    bottom: 10%;
+    justify-content: center;
+    background-color: #111111;
+}
+
+#NBCContainer {
+    width: 53%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#NavBottomContainer a {
+    display: block;
+    color: white;
+    overflow: hidden;
+    font-size: 0.8vw;
+    font-weight: 500;
+    font-family: Gilroy-Medium;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all ease 0.65s;
+}
+
+#NavBottomContainer a:hover {
+    color: #414141;
+    font-weight: 700;
+}
+
+#NavBottomContainer .NavBottomPart {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.5vw;
+    margin-top: 1.5vw;
+}
+
+#NavBottomContainer #Part1 {
+    margin-top: 1.75vw;
+}
+
+/* NavBottom ends */
+
+#NavTalk {
+    width: 9vw;
+    height: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.5vw;
+    position: relative;
+    cursor: pointer;
+    padding: 0.75vw 0.95vw;
+    transition: all ease 0.65s;
+    border-radius: 25vw;
+    background-color: #0DA34E;
+}
+
+#NavTalk h2 {
+    font-size: 1vw;
+    font-weight: 700;
+    font-family: Gilroy-Medium;
+    text-transform: uppercase;
+    transition: all ease 0.65s;
+    text-wrap: nowrap;
+}
+
+#NavTalk span svg {
+    width: 1vw;
+    height: 1vw;
+}
+
+/* Nav ends */
+
+#Container #Page1 {
+    width: 100%;
+    height: 100vh;
+}
+
+#Page1 #Page1Container {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    padding-top: 7.5vw;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#Page1Container h1 {
+    font-size: 8.5vw;
+    font-weight: 900;
+    line-height: 8.5vw;
+    text-transform: uppercase;
+}
+
+#Page1Container span svg {
+    width: 6vw;
+    height: 6vw;
+    position: relative;
+    z-index: 0;
+    padding: 2vw;
+    transform: rotate(0deg) scale(1);
+    border-radius: 50%;
+    background-color: #0DA34E;
+    transition: all ease 0.3s;
+}
+
+#Page1Container p {
+    font-size: 1.2vw;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 3vh;
+    letter-spacing: -0.05vw;
+    font-family: Gilroy-Medium;
+}
+
+#Page1Design {
+    margin: 0.15vw 0vw;
+    display: flex;
+    gap: 0.25vw;
+    align-items: center;
+    justify-content: center;
+}
+
+#Page1Design h3 {
+    border: none;
+}
+
+#Page1Design h2 {
+    font-size: 1vw;
+    font-weight: 200;
+    font-family: Gilroy-Medium;
+}
+
+#Page1Design h4,
+h3 {
+    letter-spacing: -0.05vw;
+    font-size: 1.2vw;
+    font-weight: 400;
+    font-family: Gilroy-Medium;
+    padding: 0.25vw 0.25vw;
+    border-radius: 25vw;
+    border: 0.1vw solid #666;
+}
+
+#Page1Moving {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    position: relative;
+    z-index: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+#Page1Moving #Slider {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+#Page1Moving .Blur {
+    width: 20vw;
+    height: 5vw;
+    position: absolute;
+}
+
+#Page1Moving #Blur1 {
+    right: 23%;
+    z-index: 1;
+    background: linear-gradient(to right, transparent, #111111);
+}
+
+#Page1Moving #Blur2 {
+    left: 23%;
+    background: linear-gradient(to right, #111111, transparent);
+}
+
+/* Page1 Moving Animation */
+
+@keyframes Page1MovingAnime {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Animation ends */
+
+#Page1Moving .Page1Part {
+    display: flex;
+    gap: 3.5vw;
+    align-items: center;
+    justify-content: center;
+    animation: Page1MovingAnime 20s linear infinite;
+}
+
+#Page1Moving .Page1Part p {
+    color: #3d3d3d;
+    margin-top: 0vw;
+}
+
+#Page1Moving img {
+    width: 3.5vw;
+    height: 2vw;
+}
+
+/* Page2 Starts */
+
+#Page2 {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 7.5vw 0vw;
+}
+
+#Page2Container {
+    width: 78.75%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.1vw solid #3d3d3d;
+}
+
+#Page2Container #Left {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    padding: 2.5vw 0vw;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#Left #Top h4 {
+    font-size: 0.85vw;
+    font-weight: 500;
+    font-family: Gilroy-Medium;
+}
+
+#Left #Bottom p {
+    width: 70%;
+    font-size: 1vw;
+    font-weight: 600;
+    font-family: Gilroy-Medium;
+}
+
+#Page2Container #Right {
+    width: 50%;
+    height: 100%;
+}
+
+#Right .Part {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    padding: 1.25vw 0vw 3.25vw 0vw;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-top: 0.1vw solid #3d3d3d;
+    transition: all ease 0.65s;
+}
+
+#Right .Part:hover {
+    border-top: 0.15vw solid #fff;
+}
+
+.Part img {
+    width: 7.5vw;
+    height: 7.5vw;
+    opacity: 1;
+    scale: 0;
+    z-index: -1;
+    position: absolute;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: all ease 0.65s;
+}
+
+.Part .PartRight {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.PartRight p {
+    color: #666;
+    font-size: 0.85vw;
+    font-family: Gilroy-Medium;
+}
+
+.PartRight i {
+    font-size: 1.25vw;
+}
+
+.Part h2 {
+    font-size: 1.35vw;
+    font-weight: 500;
+    font-family: Gilroy-Medium;
+}
+
+/* Page-3 starts */
+
+#Page3 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+#Page3Container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Page3Container #Design {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+    z-index: 1;
+}
+
+#Design svg {
+    width: 10.5vw;
+    height: 10.5vw;
+    cursor: pointer;
+}
+
+#Design #Watch {
+    opacity: 0;
+    width: 7.75vw;
+    height: 2vw;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5vw;
+    transition: all ease 0.65s;
+}
+
+#Watch p {
+    color: #111;
+    font-size: 0.65vw;
+    font-weight: 600;
+    font-family: Gilroy-Medium;
+    text-transform: uppercase;
+    text-wrap: nowrap;
+}
+
+#Page3Container video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    object-fit: cover;
+    transform: scaleX(0.7) scaleY(0);
+    transition: .5s cubic-bezier(.39, .575, .565, 1);
+}
+
+#Page3 img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+}
+
+/* Page-4 starts */
+
+#Page4 {
+    width: 100%;
+    height: 100vh;
+    color: black;
+    background-color: white;
+}
+
+#Page4-Container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 10%;
+    justify-content: space-between;
+    padding: 10vw 12vw 0vw 12vw;
+}
+
+#Page4-Container #Page4-Left {
+    width: 40%;
+    height: 100%;
+}
+
+#Page4-Left h1 {
+    font-size: 3vw;
+    font-family: "Gilroy-Medium";
+}
+
+#Page4-Container #Page4-Right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+}
+
+#Page4-Right p.Sub-Heading {
+    color: #a3a3a3;
+    font-size: 0.95vw;
+    font-weight: 500;
+    font-family: "Gilroy-Medium";
+    text-transform: uppercase;
+}
+
+#Page4-Right p.Lecture {
+    font-size: 1.25vw;
+    font-family: "Gilroy-Medium";
+}
+
+#Page4-Right #Right-One {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vw;
+}
+
+#Page4-Right #Right-Two {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vw;
+}
+
+/* Page-5 starts */
+
+#Page5 {
+    width: 100%;
+    height: 100vh;
+    color: black;
+    background-color: white;
+}
+
+#Page5 #Page5-Container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2%;
+    padding: 0% 7.5% 10% 7.5%;
+}
+
+#Page5-Container .Box {
+    width: 27.75%;
+    height: 47.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5vw;
+    background-color: whitesmoke;
+}
+
+.Box .Top {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75vw;
+}
+
+.Box p {
+    color: #a3a3a3;
+    font-size: 0.8vw;
+    font-weight: 600;
+    font-family: "Gilroy-Medium";
+}
+
+.Top h5 {
+    font-size: 3.5vw;
+    font-weight: 500;
+    font-family: "Gilroy-Medium";
+}
+
+.Top p {
+    color: #111;
+    font-family: "Gilroy-Medium";
+}
+
+/* Page-6 starts */
+
+#Page6 {
+    width: 100%;
+    height: 40vh;
+    position: relative;
+    color: black;
+    background-color: white;
+}
+
+#Page6-Container {
+    width: 100%;
+    height: 100%;
+    padding: 0% 5% 7.5% 35%;
+}
+
+#Page6-Container #Box {
+    position: absolute;
+    top: 3.5%;
+}
+
+#Box h2 {
+    color: #a3a3a3;
+    font-size: 0.8vw;
+    font-weight: 600;
+    font-family: "Gilroy-Medium";
+}
+
+#P-Box p {
+    text-wrap: nowrap;
+    font-size: 2.2vw;
+    font-weight: 400;
+    font-family: "Gilroy-Medium";
+}
+
+#P-Box .Top-p {
+    margin-left: 25.5%;
+}
+
+#P-Box .Medium-p {
+    margin-right: 5%;
+}
+
+/* Page-7 Starts */
+
+#Page7 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vw 10.5vw;
+    color: black;
+    background-color: white;
+}
+
+#Page7-Container {
+    height: 70%;
+    display: flex;
+    gap: 3.5%;
+    align-items: flex-start;
+}
+
+#Container-Left {
+    width: 25.5%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2vw 0vw;
+    border-top: 0.1vw solid gainsboro;
+    transition: all ease 0.65s;
+}
+
+#Container-Left:hover {
+    border-top: 0.15vw solid black;
+}
+
+#Container-Left #Left-Top {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#Left-Top h2 {
+    font-size: 2.75vw;
+    font-weight: 400;
+    font-family: "Gilroy-Medium";
+}
+
+#Left-Top i {
+    font-size: 1.25vw;
+}
+
+#Container-Left #Left-Middle {
+    width: 100%;
+    margin: 6.5vw 0vw;
+}
+
+#Left-Middle p {
+    color: #525252;
+    font-size: 1.2vw;
+    font-family: "Gilroy-Medium";
+}
+
+#Container-Right {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: all ease 0.65s;
+}
+
+#Container-Right #Right-Hover {
+    width: 9.5vw;
+    height: 9.5vw;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 2vw;
+    background-color: #4f5bff;
+    border-radius: 50%;
+    scale: 0;
+    opacity: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all ease 0.65s;
+}
+
+#Right-Hover #Hover-Bottom {
+    margin-right: 1vw;
+}
+
+#Container-Right #Right-Video {
+    width: 100%;
+    height: 100%;
+}
+
+#Right-Video video,
+#Right-Video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all ease 0.65s;
+}
