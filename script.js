@@ -1,3 +1,22 @@
+let slider = document.querySelector("#Loader");
+
+setTimeout(function () {
+  HoverBox.style.bottom = "2.5%";
+  setTimeout(function () {
+    HoverBox.style.right = "10.5%";
+  }, 1000)
+}, 7500)
+
+setTimeout(function () {
+  slider.style.top = "-100%";
+}, 6500)
+
+let page1Container = document.querySelector("#Page1 #Page1Container");
+
+setTimeout(function () {
+  page1Container.style.top = "0%";
+}, 8000)
+
 let container = document.querySelector("#Container");
 let cursor = document.querySelector("#Cursor");
 
@@ -29,6 +48,14 @@ navtalk.addEventListener("mouseleave", function () {
   navtalk.style.marginLeft = "0vw";
 })
 
+let page2 = document.querySelector("#Page2");
+
+page2.addEventListener("mouseenter", function () {
+  rightPart.forEach(function (Page2part) {
+    Page2part.style.left = "0%";
+  })
+})
+
 let rightPart = document.querySelectorAll("#Right .Part");
 
 rightPart.forEach(function (part) {
@@ -56,10 +83,16 @@ let navbottomA = document.querySelectorAll("#NavBottomContainer a");
 
 Page1.addEventListener("mouseenter", function () {
   cursor.style.display = "flex";
+  nav.style.height = "7.25vw";
 })
 
 Page1.addEventListener("mouseleave", function () {
   cursor.style.display = "none";
+  nav.style.height = "3.25vw";
+
+  navbottomA.forEach(function (a) {
+    a.style.display = "none";
+  })
 })
 
 nav.addEventListener("mouseover", function () {
