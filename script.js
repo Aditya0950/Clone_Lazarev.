@@ -27,6 +27,10 @@ container.addEventListener("mousemove", function (details) {
 
 let h1Pen = document.querySelector("#Page1Container span svg");
 
+setTimeout(function () {
+  h1Pen.style.transform = "rotate(0deg) scale(1)";
+}, 8700)
+
 h1Pen.addEventListener("mouseover", function () {
   h1Pen.style.transform = "rotate(-30deg) scale(0.85)";
 });
@@ -51,9 +55,23 @@ navtalk.addEventListener("mouseleave", function () {
 let page2 = document.querySelector("#Page2");
 
 page2.addEventListener("mouseenter", function () {
-  rightPart.forEach(function (Page2part) {
-    Page2part.style.left = "0%";
-  })
+  rightPart[0].style.left = "0%";
+
+  setTimeout(function () {
+    rightPart[1].style.left = "0%";
+  }, 500)
+
+  setTimeout(function () {
+    rightPart[2].style.left = "0%";
+  }, 700)
+
+  setTimeout(function () {
+    rightPart[3].style.left = "0%";
+  }, 900)
+
+  setTimeout(function () {
+    rightPart[4].style.left = "0%";
+  }, 1100)
 })
 
 let rightPart = document.querySelectorAll("#Right .Part");
