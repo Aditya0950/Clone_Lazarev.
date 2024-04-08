@@ -347,10 +347,10 @@ nav:hover #NavBottom {
     position: relative;
     z-index: 0;
     padding: 2vw;
-    transform: rotate(-30deg) scale(0.5);
+    transform: rotate(-90deg) scale(0);
     border-radius: 50%;
     background-color: #0DA34E;
-    transition: all ease 0.3s;
+    transition: all ease 0.35s;
 }
 
 #Page1Container p {
