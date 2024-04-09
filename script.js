@@ -1,4 +1,17 @@
-let slider = document.querySelector("#Loader");
+let animeParent = document.querySelector("#Open-Anime");
+let anime = document.querySelector("#Open-Anime #Anime");
+
+setTimeout(function () {
+  anime.style.width = "100%";
+  anime.style.height = "100%";
+  setTimeout(function () {
+    animeParent.style.backgroundColor = "transparent";
+    animeParent.style.display = "none";
+
+    anime.style.backgroundColor = "transparent";
+    anime.style.display = "none";
+  }, 750)
+}, 7500)
 
 setTimeout(function () {
   HoverBox.style.bottom = "2.5%";
@@ -6,10 +19,6 @@ setTimeout(function () {
     HoverBox.style.right = "10.5%";
   }, 1000)
 }, 7500)
-
-setTimeout(function () {
-  slider.style.top = "-100%";
-}, 6500)
 
 let page1Container = document.querySelector("#Page1 #Page1Container");
 
